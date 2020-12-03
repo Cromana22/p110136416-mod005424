@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "P110136416_ELE010_MOD005424_A1Garage/1.0.0": {
+        "runtime": {
+          "P110136416_ELE010_MOD005424_A1Garage.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "P110136416_ELE010_MOD005424_A1Garage/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
