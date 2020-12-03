@@ -5738,11 +5738,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\air_v\\OneDrive\\Documents\\GitHub\\p110136416-ele010-mod005424\\UnitTests\\UnitTests.csproj",
+      "projectUniqueName": "C:\\GitHub\\p110136416-mod005424\\UnitTests\\UnitTests.csproj",
       "projectName": "UnitTests",
-      "projectPath": "C:\\Users\\air_v\\OneDrive\\Documents\\GitHub\\p110136416-ele010-mod005424\\UnitTests\\UnitTests.csproj",
+      "projectPath": "C:\\GitHub\\p110136416-mod005424\\UnitTests\\UnitTests.csproj",
       "packagesPath": "C:\\Users\\air_v\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\air_v\\OneDrive\\Documents\\GitHub\\p110136416-ele010-mod005424\\UnitTests\\obj\\",
+      "outputPath": "C:\\GitHub\\p110136416-mod005424\\UnitTests\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -5762,8 +5762,8 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "C:\\Users\\air_v\\OneDrive\\Documents\\GitHub\\p110136416-ele010-mod005424\\P110136416_ELE010_MOD005424_A1Garage\\P110136416_ELE010_MOD005424_A1Garage.csproj": {
-              "projectPath": "C:\\Users\\air_v\\OneDrive\\Documents\\GitHub\\p110136416-ele010-mod005424\\P110136416_ELE010_MOD005424_A1Garage\\P110136416_ELE010_MOD005424_A1Garage.csproj"
+            "C:\\GitHub\\p110136416-mod005424\\P110136416_ELE010_MOD005424_A1Garage\\P110136416_ELE010_MOD005424_A1Garage.csproj": {
+              "projectPath": "C:\\GitHub\\p110136416-mod005424\\P110136416_ELE010_MOD005424_A1Garage\\P110136416_ELE010_MOD005424_A1Garage.csproj"
             }
           }
         }
