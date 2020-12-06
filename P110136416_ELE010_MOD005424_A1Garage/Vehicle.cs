@@ -76,7 +76,7 @@ namespace P110136416_ELE010_MOD005424_A1Garage
             return tempFuelType[intType];
         }
 
-        int CapacityChecker()
+        public int CapacityChecker()
         //This method sets the max fuel capacity based on vehicle type.
         //Depends on RandomVehicleType.
         {
