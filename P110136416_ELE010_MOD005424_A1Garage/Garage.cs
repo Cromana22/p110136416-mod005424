@@ -100,17 +100,19 @@ namespace P110136416_ELE010_MOD005424_A1Garage
 
             //calculate wages etc
             double wages = Math.Round((shiftEnd - shiftStart).TotalMinutes / 60 * wageRate, 2);
+            string wagesString = string.Format("{0:0.00}", wages);
             float commission = 0F;
 
             foreach (Fuel fuel in fuels)
             {
                 commission = (float)Math.Round(commission + (fuel.ReturnSessionPrice() * commissionRate), 2);
             }
+            string commissionString = string.Format("{0:0.00}", commission);
 
             //Write to shiftLog file
             string path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
             string shiftFile = @"\ShiftLog.txt";
-            string shiftLog = $"\n{DateTime.Now} : {username} : {shiftStart} - {shiftEnd} : £{wages} wages and £{commission} commission." +
+            string shiftLog = $"\n{DateTime.Now} : {username} : {shiftStart} - {shiftEnd} : £{wagesString} wages and £{commissionString} commission." +
                 $"\n{vehiclesServiced} vehicles were serviced and {vehiclesNotServiced} left without service.";
 
             foreach (Fuel fuel in fuels)
@@ -123,7 +125,7 @@ namespace P110136416_ELE010_MOD005424_A1Garage
             //Display on console the same information
             Console.Clear();
             Console.WriteLine($"Thank you for your shift, {username}.");
-            Console.WriteLine($"You earned £{wages} and £{commission} commission.");
+            Console.WriteLine($"You earned £{wagesString} and £{commissionString} commission.");
             Thread.Sleep(5000);
 
             //clear session counters
@@ -302,13 +304,17 @@ namespace P110136416_ELE010_MOD005424_A1Garage
 
             foreach (Fuel fuel in fuels)
             {
-                sessionPrice += (float)Math.Round(fuel.ReturnSessionPrice(), 2);
-                totalPrice += (float)Math.Round(fuel.ReturnTotalPrice(), 2);
+                sessionPrice += (float)Math.Round((fuel.ReturnSessionPrice()), 2);
+                totalPrice += (float)Math.Round((fuel.ReturnTotalPrice()), 2);
                 sessionLtr += fuel.SessionCount;
                 totalLtr += fuel.TotalCount;
             }
 
             sessionCommission = (float)Math.Round((sessionPrice * commissionRate), 2);
+
+            string sessionPriceString = string.Format("{0:0.00}", sessionPrice);
+            string sessionCommissionString = string.Format("{0:0.00}", sessionCommission);
+            string totalPriceString = string.Format("{0:0.00}", totalPrice);
 
             for (int i = 0; i < queue.Length; i++) //sets the queue display based on queue value
             {
@@ -345,7 +351,8 @@ namespace P110136416_ELE010_MOD005424_A1Garage
             }
 
             Console.Clear();
-            Console.WriteLine($"Welcome To A1 Garage, {username}. Input a pump number to send vehicle to a pump.\n");
+            Console.WriteLine($"Welcome To A1 Garage, {username}.");
+            Console.WriteLine("Input a pump number to send vehicle to a pump, or press Esc to log out.\n");
             Console.WriteLine($"  _ _ _ _  _ _ _ _ _ _ _ _ _ _ _ _ _ _ ");
             Console.WriteLine($"| QUEUE: |         |         |         |");
 
@@ -382,10 +389,10 @@ namespace P110136416_ELE010_MOD005424_A1Garage
             Console.WriteLine($"| _ _ _ _| _ _ _ _ | _ _ _ _ | _ _ _ _ |");
 
             Console.WriteLine();
-            Console.WriteLine(String.Format("{0,-12} : {1,-6} | {2,-11} : {3,-9} | {4,-10} : {5,-8}", "Sesh Ltr", sessionLtr, "Sesh Price", $"£{sessionPrice}", "Sesh Comm", $"£{sessionCommission}"));
-            Console.WriteLine(String.Format("{0,-12} : {1,-6} | {2,-11} : {3,-9}", "Total Ltr", totalLtr, "Total Price", $"£{totalPrice}"));
+            Console.WriteLine(String.Format("{0,-12} : {1,-6} | {2,-11} : {3,-9} | {4,-10} : {5,-8}", "Sesh Ltr", sessionLtr, "Sesh Price", $"£{sessionPriceString}", "Sesh Comm", $"£{sessionCommissionString}"));
+            Console.WriteLine(String.Format("{0,-12} : {1,-6} | {2,-11} : {3,-9}", "Total Ltr", totalLtr, "Total Price", $"£{totalPriceString}"));
             Console.WriteLine(String.Format("{0,-12} : {1,-6} : {2,-11} : {3,-9}", "Veh Serviced", vehiclesServiced, "Veh Left", $"{vehiclesNotServiced}"));
-
+            Console.WriteLine();
             foreach (Fuel fuel in fuels)
             {
                 Console.WriteLine($"{fuel.Name}: {fuel.SessionCount} litres dispensed this shift");
